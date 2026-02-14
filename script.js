@@ -1,5 +1,5 @@
 // Configuration
-const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY'; // Get from Google AI Studio
+const GEMINI_API_KEY = 'AIzaSyAi8bVXYr0lKSCeiTnLmvwdbZu504vRmNM'; // Get from Google AI Studio
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 // DOM Elements
@@ -189,4 +189,5 @@ customerMessage.addEventListener('keydown', (e) => {
 });
 
 // Initialize
+
 checkUsage();
