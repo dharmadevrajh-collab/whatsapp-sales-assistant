@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Sales Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <h1>Sales Reply AI</h1>
+            </div>
+            <div class="header-right">
+                <span class="tone-badge">Friendly Mode</span>
+                <span class="plan-badge">Free Trial</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Left Panel - Input -->
+            <div class="input-panel">
+                <h2>Customer Message</h2>
+                <textarea id="customerMessage" placeholder="Paste customer's WhatsApp message here..." rows="8">Hi, I'm interested in your product but the price seems a bit high. Do you have any discounts?</textarea>
+                
+                <div class="controls">
+                    <div class="tone-selector">
+                        <label>Reply Tone:</label>
+                        <select id="toneSelect">
+                            <option value="friendly">😊 Friendly</option>
+                            <option value="professional">👔 Professional</option>
+                            <option value="enthusiastic">🎉 Enthusiastic</option>
+                            <option value="empathetic">💝 Empathetic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="upsell-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="upsellToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Include Upsells</span>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="generate-btn">
+                    <span>Generate Sales Reply</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <div class="example-prompts">
+                    <h3>Quick Examples:</h3>
+                    <div class="example-buttons">
+                        <button class="example-btn" data-message="Do you have this in stock?">📦 Stock inquiry</button>
+                        <button class="example-btn" data-message="Can you lower the price?">💰 Price objection</button>
+                        <button class="example-btn" data-message="I need to think about it">🤔 Decision delay</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Output -->
+            <div class="output-panel">
+                <h2>AI Generated Reply</h2>
+                
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Crafting the perfect sales reply...</p>
+                </div>
+
+                <div class="reply-card" id="replyCard" style="display: none;">
+                    <div class="reply-header">
+                        <span class="reply-badge">✨ AI Generated</span>
+                        <button id="copyBtn" class="copy-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="reply-content" id="generatedReply"></div>
+                    
+                    <div class="features-detected">
+                        <h4>Features Used:</h4>
+                        <div class="feature-tags" id="featureTags">
+                            <span class="feature-tag">Objection Handling ✓</span>
+                            <span class="feature-tag">Upsell Suggestions ✓</span>
+                            <span class="feature-tag">Friendly Tone ✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upgrade-prompt" id="upgradePrompt">
+                    <h3>🚀 Unlock More Features</h3>
+                    <p>RM39/month - Get unlimited generations, priority support, and advanced sales strategies</p>
+                    <button class="upgrade-btn">Upgrade Now</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
